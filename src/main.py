@@ -42,7 +42,7 @@ if __name__ == "__main__":
             circle.draw(screen)
 
         pg.display.flip()
-        dt = clock.tick(20) * .001
+        dt = clock.tick(pg.display.get_current_refresh_rate()) * .001
         
     pg.quit()
 
