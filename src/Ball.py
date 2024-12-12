@@ -34,28 +34,27 @@ class Ball:
             self.acceleration = vec2(0, 0)
 
 
-            collided = False
+            collided = True
 
             # collision:
             if self._check_collision_with_right():
-                collided = True
                 self.center.x = 500 - self.radius
                 self.velocity.x = self.velocity.x * -1
 
-            if self._check_collistion_with_left():
-                collided = True
+            elif self._check_collistion_with_left():
                 self.center.x = self.radius
                 self.velocity.x = self.velocity.x * -1         
 
-            if self._check_collision_with_top():
-                collided = True
+            elif self._check_collision_with_top():
                 self.center.y = self.radius
                 self.velocity.y = self.velocity.y * -1
 
-            if self._check_collision_with_bottom():
+            elif self._check_collision_with_bottom():
                 collided = True
                 self.center.y = 500 - self.radius
                 self.velocity.y = self.velocity.y * -1
+
+            else: collided = False
 
             self.can_move = collided
 
