@@ -4,7 +4,6 @@ from random import randrange
 vec2 = pg.Vector2
 
 if __name__ == "__main__":
-    t = 0
     class Circle:
         def __init__(self, color: pg.color.Color = "red", radius: int = 40, center: pg.Vector2 = 0):
             self.color = color
