@@ -50,7 +50,6 @@ class Ball:
                 self.velocity.y = self.velocity.y * -1
 
             elif self._check_collision_with_bottom():
-                collided = True
                 self.center.y = 500 - self.radius
                 self.velocity.y = self.velocity.y * -1
 
