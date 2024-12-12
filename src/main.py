@@ -1,6 +1,6 @@
 import pygame as pg
 from Ball import Ball
-from shared import vec2
+from pygame import Vector2 as vec2
 
 if __name__ == "__main__":
     running = False

@@ -1,6 +1,6 @@
 import pygame as pg
 from random import randrange
-from shared import vec2
+from pygame import Vector2 as vec2
 
 GRAVITY = vec2(0, -20)
 class Ball:
