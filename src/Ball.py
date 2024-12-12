@@ -1,10 +1,8 @@
 import pygame as pg
 from random import randrange
+from __init__ import vec2
 
-vec2 = pg.Vector2
-
-if __name__ == "__main__":
-    class Circle:
+class Ball:
         def __init__(self, color: pg.color.Color = "red", radius: int = 40, center: pg.Vector2 = 0):
             self.color = color
             self.radius = radius
@@ -70,10 +68,10 @@ if __name__ == "__main__":
                 keys = pg.key.get_pressed()
     
                 if keys[pg.K_w]:
-                    self.acceleration = vec2(0, 200)
+                    self.acceleration = vec2(0, 200) * -1
 
                 if keys[pg.K_a]:
-                    self.acceleration = vec2(200, 0)
+                    self.acceleration = vec2(200, 0) * - 1
 
                 if keys[pg.K_d]:
                     self.acceleration = vec2(200, 0)
@@ -95,47 +93,3 @@ if __name__ == "__main__":
         
         def _check_collision_with_bottom(self):
             return self.center.y >= 500 - self.radius
-
-    running = False
-    dt = 0
-
-    def init():
-        global screen, clock, running
-        pg.init()
-        screen  = pg.display.set_mode((500, 500))
-        clock = pg.time.Clock()
-        running = True
-
-
-    def handle_keyboard_inputs():
-        global running
-        keys = pg.key.get_pressed()
-
-        if keys[pg.K_ESCAPE]:
-            running = False
-
-
-    init()
-
-    circles = [Circle(center=vec2(screen.get_rect().center))]
-
-    while running:
-        for event in pg.event.get(eventtype=pg.QUIT):
-            if event.type == pg.QUIT:
-                running = False
-
-
-        handle_keyboard_inputs()
-
-        screen.fill("yellow")
-
-
-        for circle in circles:
-            circle.update(dt)
-            circle.draw(screen)
-
-        pg.display.flip()
-        dt = clock.tick(20) * .001
-        
-    pg.quit()
-
