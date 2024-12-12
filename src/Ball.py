@@ -1,6 +1,6 @@
 import pygame as pg
 from random import randrange
-from __init__ import vec2
+from shared import vec2
 
 class Ball:
         def __init__(self, color: pg.color.Color = "red", radius: int = 40, center: pg.Vector2 = 0):
