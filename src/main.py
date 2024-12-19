@@ -1,5 +1,5 @@
 import pygame as pg
-from Ball import Ball
+from ball import Ball
 from pygame import Vector2 as vec2
 
 if __name__ == "__main__":
